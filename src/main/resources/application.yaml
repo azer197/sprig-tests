@@ -1,4 +1,13 @@
+server:
+  port: 8181
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/adjoda-dev-realm
+          jwk-set-uri: http://localhost:8080/realms/adjoda-dev-realm/protocol/openid-connect/certs
+
   datasource:
     url: jdbc:mysql://localhost:3306/nethelp
     username: admin
@@ -13,3 +22,5 @@ spring:
 
   application:
     name: USER-SERVICE
+
+
